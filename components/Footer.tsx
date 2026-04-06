@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { WhatsappLogo, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import { site, whatsappLink } from "@/lib/config";
@@ -9,15 +10,15 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full bg-[var(--color-ember)] flex items-center justify-center text-[var(--color-paper)] font-serif text-xl font-semibold">
-                H
+              <div className="w-12 h-12 rounded-[0.75rem] overflow-hidden shadow-[0_6px_20px_-6px_rgba(24,52,84,0.35)] ring-1 ring-[var(--color-ink-line)]/40">
+                <Image src="/logo.jpg" alt="My Excursion Club" width={48} height={48} className="object-cover w-full h-full" />
               </div>
               <div>
                 <div className="font-display text-2xl font-semibold text-[var(--color-ink)] leading-none tracking-tight">
                   {site.brandName}
                 </div>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-ink-subtle)] mt-1">
-                  Red Sea · Egypt
+                  Hurghada · Red Sea
                 </div>
               </div>
             </div>

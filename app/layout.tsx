@@ -15,11 +15,11 @@ const fontBody = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Hurghada Tours — Rotes Meer, Wüste, Pyramiden",
+  title: "My Excursion Club — Hurghada Tours & Ausflüge",
   description:
     "Kuratierte Ausflüge ab Hurghada. Tauchen, Luxor, Cairo, Wüstensafari, Bootstouren. Persönliche Beratung auf Deutsch.",
   openGraph: {
-    title: "Hurghada Tours",
+    title: "My Excursion Club",
     description:
       "Kuratierte Ausflüge ab Hurghada. Persönliche Beratung auf Deutsch.",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23a85830'/><text x='50' y='68' font-family='serif' font-size='58' font-weight='600' text-anchor='middle' fill='%23fbf7ef'>H</text></svg>",
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23183454'/><text x='50' y='68' font-family='serif' font-size='44' font-weight='600' text-anchor='middle' fill='%23d4a030'>M</text></svg>",
       },
     ],
   },

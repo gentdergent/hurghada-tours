@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
@@ -28,8 +29,8 @@ export function Header() {
           href="/"
           className="flex items-center gap-3 group cursor-pointer"
         >
-          <div className="w-10 h-10 rounded-full bg-[var(--color-ember)] flex items-center justify-center text-[var(--color-paper)] font-serif text-xl font-semibold shadow-[0_8px_24px_-8px_rgba(168,88,48,0.45)]">
-            H
+          <div className="w-11 h-11 rounded-[0.75rem] overflow-hidden shadow-[0_8px_24px_-8px_rgba(24,52,84,0.4)] ring-1 ring-white/20">
+            <Image src="/logo.jpg" alt="My Excursion Club" width={44} height={44} className="object-cover w-full h-full" />
           </div>
           <div
             className={`transition-colors duration-300 ${
@@ -46,7 +47,7 @@ export function Header() {
                   : "text-[var(--color-paper)]/70"
               }`}
             >
-              Red Sea · Egypt
+              Hurghada · Red Sea
             </div>
           </div>
         </Link>
@@ -76,7 +77,7 @@ export function Header() {
           href={whatsappLink("Hallo, ich interessiere mich für eure Touren.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[var(--color-ember)] hover:bg-[var(--color-ember-deep)] text-[var(--color-paper)] px-5 py-2.5 text-sm font-medium shadow-[0_10px_30px_-10px_rgba(168,88,48,0.55)] transition-all duration-300 hover:-translate-y-[1px] active:translate-y-0 cursor-pointer"
+          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[var(--color-ember)] hover:bg-[var(--color-ember-deep)] text-[var(--color-ink)] px-5 py-2.5 text-sm font-medium shadow-[0_10px_30px_-10px_rgba(212,160,48,0.5)] transition-all duration-300 hover:-translate-y-[1px] active:translate-y-0 cursor-pointer"
         >
           <WhatsappLogo weight="fill" size={16} />
           Schreiben

@@ -2,7 +2,7 @@
 // business details once they are confirmed.
 
 export const site = {
-  brandName: "Hurghada Tours",
+  brandName: "My Excursion Club",
   tagline: "Rotes Meer. Wüste. Pyramiden.",
   description:
     "Kuratierte Ausflüge ab Hurghada. Persönliche Beratung auf Deutsch, faire Preise, Abholung direkt vom Hotel.",

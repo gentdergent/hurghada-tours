@@ -112,7 +112,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <a
                   href="#touren"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-ember)] hover:bg-[var(--color-ember-deep)] text-[var(--color-paper)] px-8 py-4 text-sm md:text-base font-medium transition-all duration-500 hover:-translate-y-[2px] active:translate-y-0 cursor-pointer shadow-[0_20px_50px_-20px_rgba(168,88,48,0.6)]"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-ember)] hover:bg-[var(--color-ember-deep)] text-[var(--color-ink)] px-8 py-4 text-sm md:text-base font-medium transition-all duration-500 hover:-translate-y-[2px] active:translate-y-0 cursor-pointer shadow-[0_20px_50px_-20px_rgba(212,160,48,0.55)]"
                 >
                   Touren entdecken
                   <ArrowUpRight
@@ -429,7 +429,7 @@ export default function Home() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 rounded-full bg-[var(--color-ink)] hover:bg-[var(--color-ember)] text-[var(--color-paper)] px-8 py-5 text-base font-medium shadow-[0_25px_70px_-25px_rgba(32,25,19,0.55)] transition-all duration-500 hover:-translate-y-[2px] active:translate-y-0 cursor-pointer"
+                    className="group inline-flex items-center gap-3 rounded-full bg-[var(--color-ink)] hover:bg-[var(--color-ember)] text-[var(--color-paper)] hover:text-[var(--color-ink)] px-8 py-5 text-base font-medium shadow-[0_25px_70px_-25px_rgba(24,52,84,0.5)] transition-all duration-500 hover:-translate-y-[2px] active:translate-y-0 cursor-pointer"
                   >
                     <WhatsappLogo size={20} weight="fill" />
                     Schreiben auf WhatsApp

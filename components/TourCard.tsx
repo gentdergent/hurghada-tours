@@ -31,7 +31,7 @@ export function TourCard({ tour, index = 0, tall = false }: Props) {
           className="block cursor-pointer"
         >
           {/* Outer bezel */}
-          <div className="relative p-1.5 md:p-2 rounded-[2.25rem] bg-[var(--color-ink)]/[0.04] ring-1 ring-[var(--color-ink)]/[0.06] transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:bg-[var(--color-ember)]/[0.08] group-hover:ring-[var(--color-ember)]/20 group-hover:shadow-[0_40px_80px_-30px_rgba(168,88,48,0.35)]">
+          <div className="relative p-1.5 md:p-2 rounded-[2.25rem] bg-[var(--color-ink)]/[0.04] ring-1 ring-[var(--color-ink)]/[0.06] transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:bg-[var(--color-ember)]/[0.08] group-hover:ring-[var(--color-ember)]/20 group-hover:shadow-[0_40px_80px_-30px_rgba(24,52,84,0.3)]">
             {/* Inner core — concentric radius */}
             <div
               className={`relative overflow-hidden rounded-[calc(2.25rem-0.375rem)] md:rounded-[calc(2.25rem-0.5rem)] bg-[var(--color-paper-warm)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.5)] ${
