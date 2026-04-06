@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
+@theme {
+  /* ============================================================
+     EDITORIAL LUXURY — warm creams, deep espresso, terracotta
+     Single-accent system. No teal/gold/purple AI fingerprints.
+     ============================================================ */
+
+  /* Surfaces — paper-warm cream spectrum */
+  --color-paper: oklch(0.98 0.012 80);        /* #fbf7ef — main bg */
+  --color-paper-deep: oklch(0.955 0.018 80);  /* #f5eee0 — sections */
+  --color-paper-warm: oklch(0.92 0.025 78);   /* #e9dec9 — accents */
+  --color-surface: oklch(0.995 0.006 80);     /* #fffef9 — cards */
+
+  /* Ink — deep espresso, off-black */
+  --color-ink: oklch(0.18 0.015 50);          /* #201913 — primary text */
+  --color-ink-muted: oklch(0.42 0.018 50);    /* #5c544b — body */
+  --color-ink-subtle: oklch(0.58 0.015 55);   /* #867e73 — captions */
+  --color-ink-line: oklch(0.82 0.015 60);     /* #d4ccbe — borders */
+
+  /* Accent — single, desaturated terracotta/copper */
+  --color-ember: oklch(0.55 0.14 38);         /* #a85830 — primary accent */
+  --color-ember-deep: oklch(0.44 0.13 35);    /* #82411f — hover */
+  --color-ember-soft: oklch(0.94 0.035 55);   /* #f4e8dc — tinted bg */
+
+  /* Typography */
+  --font-sans: var(--font-body), "Geist", system-ui, sans-serif;
+  --font-serif: var(--font-display), "Fraunces", Georgia, serif;
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Paper grain overlay — fixed, pointer-events none, GPU-safe */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-paper);
+}
+
+/* Fraunces variable font optical-size flourish for display */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02";
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.02em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Tabular numbers for stats/prices */
+.nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Subtle fade + rise on load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.rise {
+  animation: rise 1s var(--ease-smooth) both;
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-1%, 1%, 0);
+  }
+}
+
+.ken-burns {
+  animation: ken-burns 22s var(--ease-smooth) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
