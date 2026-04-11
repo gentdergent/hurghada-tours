@@ -9,4 +9,4 @@ Start: `cd ~/projects/hurghada-tours && npm run dev`
 - **Last Session:** 2026-04-11 (Gent)
 - **Last Author:** Gent
 - **Phase:** Live (Production deployed)
-- **Next Action:** Operator Amo Magdy Screenshot/Loom schicken zur Content-Bestätigung; Stats-Zahlen vor öffentlichem Launch durch echte Werte ersetzen oder entfernen (§5 UWG); Impressum/Datenschutz nachziehen.
+- **Next Action:** Stats-Zahlen vor öffentlichem Launch durch echte Werte ersetzen oder entfernen (§5 UWG) — heisseste offene Baustelle. Danach: Impressum/Datenschutz nachziehen, Loom an Amo Magdy zur Content-Approval.
