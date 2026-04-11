@@ -196,7 +196,6 @@ export const tours: Tour[] = [
       "Perfekt für Paare und kleine Gruppen",
     ],
     image: IMG.redSeaHurghada,
-    featured: true,
   },
 
   // ========================= UNTERWASSER =========================
@@ -384,7 +383,19 @@ export const tours: Tour[] = [
   },
 ];
 
-export const featuredTours = tours.filter((t) => t.featured);
+// Explizite Reihenfolge der Highlights auf der Landing (nicht Array-Reihenfolge):
+// Orange Bay → Wüstensafari → Luxor → Cairo → Daily Dive.
+const FEATURED_ORDER = [
+  "orange-bay",
+  "desert-safari",
+  "luxor-overday",
+  "cairo-overday",
+  "daily-dive",
+] as const;
+
+export const featuredTours = FEATURED_ORDER.map(
+  (slug) => tours.find((t) => t.slug === slug)!,
+);
 
 export function getToursByCategory(category: TourCategory): Tour[] {
   return tours.filter((t) => t.category === category);
