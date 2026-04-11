@@ -1,5 +1,12 @@
 @AGENTS.md
 
 ## Dev Server
-Läuft auf Port **3009** → http://habit:3009
-Start: `cd ~/projects/hurghada-tours && npm run dev -- -p 3009`
+Läuft auf Port **3000** → http://habit:3000
+Start: `cd ~/projects/hurghada-tours && npm run dev`
+(Port 3009 war Edon-Lokalsetup — auf habit-Server steht 3000 frei.)
+
+## Collab Status
+- **Last Session:** 2026-04-11 (Gent)
+- **Last Author:** Gent
+- **Phase:** Live (Production deployed)
+- **Next Action:** Operator Amo Magdy Screenshot/Loom schicken zur Content-Bestätigung; Stats-Zahlen vor öffentlichem Launch durch echte Werte ersetzen oder entfernen (§5 UWG); Impressum/Datenschutz nachziehen.
