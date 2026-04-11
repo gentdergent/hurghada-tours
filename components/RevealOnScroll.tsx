@@ -26,6 +26,8 @@ export function RevealOnScroll({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Intentional post-mount hydration flip — see component doc above.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
 
     // Safety net: if IntersectionObserver never fires (e.g. Lenis edge cases),

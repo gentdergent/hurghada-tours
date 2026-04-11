@@ -1,0 +1,14 @@
+name: Hurghada Tours
+type: kundenprojekt
+kunde: null
+status: pausiert
+phase: "Website-Entwurf"
+priority: P3
+stack: [Next.js, TypeScript, Tailwind CSS, Framer Motion]
+repo: edonmurati/hurghada-tours
+urls:
+  prod: null
+  staging: null
+team: [gent, edon]
+kontakt: null
+naechster_schritt: null
