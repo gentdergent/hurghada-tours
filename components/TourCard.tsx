@@ -35,7 +35,7 @@ export function TourCard({ tour, index = 0, tall = false }: Props) {
             {/* Inner core — concentric radius */}
             <div
               className={`relative overflow-hidden rounded-[calc(2.25rem-0.375rem)] md:rounded-[calc(2.25rem-0.5rem)] bg-[var(--color-paper-warm)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.5)] ${
-                tall ? "aspect-[3/4]" : "aspect-[4/5]"
+                tall ? "aspect-[5/4]" : "aspect-[4/3]"
               }`}
             >
               <Image
@@ -78,11 +78,11 @@ export function TourCard({ tour, index = 0, tall = false }: Props) {
               </div>
 
               {/* Title block */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-paper)]/80 mb-3 nums">
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                <div className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-paper)]/80 mb-2 nums">
                   {tour.duration}
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl font-semibold text-[var(--color-paper)] leading-[1.02] tracking-[-0.02em] text-balance">
+                <h3 className="font-display text-2xl md:text-3xl font-semibold text-[var(--color-paper)] leading-[1.05] tracking-[-0.02em] text-balance">
                   {tour.title}
                 </h3>
               </div>
@@ -90,12 +90,12 @@ export function TourCard({ tour, index = 0, tall = false }: Props) {
           </div>
 
           {/* Summary + CTA below card */}
-          <div className="pt-7 px-2 md:px-3 flex items-start justify-between gap-6">
-            <p className="text-sm md:text-[15px] text-[var(--color-ink-muted)] leading-relaxed max-w-md">
+          <div className="pt-5 px-2 md:px-3 flex items-start justify-between gap-4">
+            <p className="text-[13px] md:text-sm text-[var(--color-ink-muted)] leading-relaxed max-w-sm line-clamp-3">
               {tour.summary}
             </p>
-            <div className="flex-shrink-0 w-11 h-11 md:w-12 md:h-12 rounded-full border border-[var(--color-ink-line)] flex items-center justify-center text-[var(--color-ink)] group-hover:bg-[var(--color-ember)] group-hover:text-[var(--color-paper)] group-hover:border-[var(--color-ember)] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-rotate-45">
-              <ArrowUpRight size={18} weight="regular" />
+            <div className="flex-shrink-0 w-10 h-10 rounded-full border border-[var(--color-ink-line)] flex items-center justify-center text-[var(--color-ink)] group-hover:bg-[var(--color-ember)] group-hover:text-[var(--color-paper)] group-hover:border-[var(--color-ember)] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-rotate-45">
+              <ArrowUpRight size={16} weight="regular" />
             </div>
           </div>
         </a>
