@@ -269,14 +269,14 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            FEATURED TOURS — asymmetric zig-zag with Double-Bezel cards
+            FEATURED TOURS — 5-card compact grid with Double-Bezel cards
             =================================================================== */}
         <section
           id="touren"
-          className="relative bg-[var(--color-paper)] py-28 md:py-40"
+          className="relative bg-[var(--color-paper)] py-20 md:py-28"
         >
           <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-16 md:mb-24">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-12 md:mb-16">
               <div className="max-w-2xl">
                 <RevealOnScroll>
                   <div className="text-[11px] uppercase tracking-[0.28em] text-[var(--color-ember)] font-medium mb-6">
@@ -300,25 +300,24 @@ export default function Home() {
               </RevealOnScroll>
             </div>
 
-            {/* Asymmetric zig-zag: col-spans differ, vertical offsets create rhythm */}
-            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-              <div className="md:col-span-7">
-                <TourCard tour={featuredTours[0]} index={0} tall />
+            {/* 5-card compact grid: 3 oben + 2 unten, alle gleich hoch */}
+            <div className="grid md:grid-cols-6 gap-6 md:gap-8">
+              {/* Row 1: Orange, Safari, Luxor — je 2 cols of 6 */}
+              <div className="md:col-span-2">
+                <TourCard tour={featuredTours[0]} index={0} />
               </div>
-              <div className="md:col-span-5 md:mt-32">
+              <div className="md:col-span-2">
                 <TourCard tour={featuredTours[1]} index={1} />
               </div>
-              <div className="md:col-span-5">
+              <div className="md:col-span-2">
                 <TourCard tour={featuredTours[2]} index={2} />
               </div>
-              <div className="md:col-span-7 md:mt-20">
-                <TourCard tour={featuredTours[3]} index={3} tall />
+              {/* Row 2: Cairo + Diving — je 3 cols, etwas breiter */}
+              <div className="md:col-span-3">
+                <TourCard tour={featuredTours[3]} index={3} />
               </div>
-              <div className="md:col-span-6">
+              <div className="md:col-span-3">
                 <TourCard tour={featuredTours[4]} index={4} />
-              </div>
-              <div className="md:col-span-6 md:mt-24">
-                <TourCard tour={featuredTours[5]} index={5} />
               </div>
             </div>
 
