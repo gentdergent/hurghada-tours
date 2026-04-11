@@ -1,14 +1,15 @@
 name: Hurghada Tours
 type: kundenprojekt
-kunde: null
-status: pausiert
-phase: "Website-Entwurf"
+kunde: Amo Magdy (My Excursion Club)
+status: aktiv
+phase: "Live (Production)"
 priority: P3
 stack: [Next.js, TypeScript, Tailwind CSS, Framer Motion]
-repo: edonmurati/hurghada-tours
+repo: gentdergent/hurghada-tours
 urls:
-  prod: null
+  prod: null  # Coolify Production-URL noch nicht dokumentiert
   staging: null
 team: [gent, edon]
-kontakt: null
-naechster_schritt: null
+kontakt:
+  whatsapp: "+20 100 934 3013"
+naechster_schritt: "Operator Amo Magdy Content-Approval einholen; Stats-Zahlen klären (§5 UWG)"
