@@ -60,12 +60,20 @@ export function TourCard({ tour, index = 0, tall = false }: Props) {
               {/* Price tag */}
               <div className="absolute top-5 right-5">
                 <div className="bg-[var(--color-paper)]/92 backdrop-blur-md rounded-full px-4 py-1.5 flex items-baseline gap-1 border border-[var(--color-paper)]/40">
-                  <span className="text-[10px] text-[var(--color-ink-subtle)] uppercase tracking-wider">
-                    ab
-                  </span>
-                  <span className="nums font-display text-lg font-semibold text-[var(--color-ink)] leading-none">
-                    €{tour.priceFrom}
-                  </span>
+                  {tour.priceFrom !== undefined ? (
+                    <>
+                      <span className="text-[10px] text-[var(--color-ink-subtle)] uppercase tracking-wider">
+                        ab
+                      </span>
+                      <span className="nums font-display text-lg font-semibold text-[var(--color-ink)] leading-none">
+                        €{tour.priceFrom}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-[11px] font-medium text-[var(--color-ink)] uppercase tracking-wider leading-none py-0.5">
+                      Auf Anfrage
+                    </span>
+                  )}
                 </div>
               </div>
 
