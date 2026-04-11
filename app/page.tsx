@@ -19,6 +19,7 @@ import { site, whatsappLink } from "@/lib/config";
 import {
   featuredTours,
   categories,
+  tours,
   HERO_IMAGE,
   CONTACT_IMAGE,
 } from "@/lib/tours";
@@ -103,9 +104,9 @@ export default function Home() {
 
               {/* Subcopy */}
               <p className="text-base md:text-xl text-[var(--color-paper)]/80 leading-relaxed max-w-xl mb-8 md:mb-12 text-balance">
-                Tauchen, Luxor, Wüste, Pyramiden — sieben Touren, ein
-                Ansprechpartner, Beratung auf Deutsch. Wir vermitteln nicht an
-                Dritte: wir kennen jeden Guide persönlich.
+                Tauchen, Luxor, Wüste, Pyramiden — ein handverlesener Katalog,
+                ein Ansprechpartner, Beratung auf Deutsch. Wir vermitteln nicht
+                an Dritte: wir kennen jeden Guide persönlich.
               </p>
 
               {/* CTAs */}
@@ -210,12 +211,12 @@ export default function Home() {
               <div className="md:col-span-5">
                 <RevealOnScroll>
                   <div className="text-[11px] uppercase tracking-[0.28em] text-[var(--color-ember)] font-medium mb-6">
-                    — Fünf Welten
+                    — Sechs Welten
                   </div>
                   <h2 className="font-display text-5xl md:text-7xl font-medium text-[var(--color-ink)] leading-[0.95] tracking-[-0.02em] text-balance">
                     Ein Urlaub,
                     <br />
-                    fünf Welten,
+                    sechs Welten,
                     <br />
                     <em className="italic font-normal text-[var(--color-ember)]">
                       ein Ansprech­partner.
@@ -226,7 +227,7 @@ export default function Home() {
               <div className="md:col-span-6 md:col-start-7 flex items-end">
                 <RevealOnScroll delay={0.15}>
                   <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed max-w-md">
-                    Wir haben sieben Jahre damit verbracht, die besten Anbieter
+                    Wir haben Jahre damit verbracht, die besten Anbieter
                     entlang der Küste zu finden. Alles was ihr hier seht, haben
                     wir persönlich getestet und für gut befunden.
                   </p>
@@ -319,6 +320,145 @@ export default function Home() {
               <div className="md:col-span-6 md:mt-24">
                 <TourCard tour={featuredTours[5]} index={5} />
               </div>
+            </div>
+
+            {/* Transfer-Zuschlag-Hinweis */}
+            <RevealOnScroll delay={0.1}>
+              <div className="mt-20 md:mt-28 pt-8 border-t border-[var(--color-ink-line)]/60">
+                <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+                  <div className="md:col-span-3">
+                    <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-ember)] font-medium">
+                      — Gut zu wissen
+                    </div>
+                  </div>
+                  <div className="md:col-span-9">
+                    <p className="text-sm md:text-base text-[var(--color-ink-muted)] leading-relaxed max-w-2xl">
+                      Alle Preise gelten bei Abholung im Raum Hurghada. Für
+                      Hotels in <em className="not-italic text-[var(--color-ink)]">Sahl Hasheesh, Makadi Bay, Soma Bay und El Gouna</em>{" "}
+                      kommt ein Transfer-Zuschlag von €10 pro Person dazu.
+                      Genauen Preis inkl. Abholung bekommt ihr in der
+                      WhatsApp-Bestätigung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            FULL CATALOG — kompakte Liste aller 17 Touren, gruppiert nach Welt
+            =================================================================== */}
+        <section
+          id="katalog"
+          className="relative bg-[var(--color-paper-deep)] py-28 md:py-36 overflow-hidden"
+        >
+          <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
+            <div className="grid md:grid-cols-12 gap-12 md:gap-16 mb-16 md:mb-24">
+              <div className="md:col-span-5">
+                <RevealOnScroll>
+                  <div className="text-[11px] uppercase tracking-[0.28em] text-[var(--color-ember)] font-medium mb-6">
+                    — Vollständiger Katalog
+                  </div>
+                  <h2 className="font-display text-5xl md:text-7xl font-medium text-[var(--color-ink)] leading-[0.95] tracking-[-0.02em] text-balance">
+                    Alle Touren
+                    <br />
+                    <em className="italic font-normal text-[var(--color-ember)]">
+                      auf einen Blick.
+                    </em>
+                  </h2>
+                </RevealOnScroll>
+              </div>
+              <div className="md:col-span-6 md:col-start-7 flex items-end">
+                <RevealOnScroll delay={0.15}>
+                  <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed max-w-md">
+                    Siebzehn Touren, vier Welten, ein Ansprechpartner. Klickt
+                    eine an und wir bestätigen Verfügbarkeit, Abholung und
+                    Endpreis direkt per WhatsApp.
+                  </p>
+                </RevealOnScroll>
+              </div>
+            </div>
+
+            {/* Kategorien-Gruppen */}
+            <div className="space-y-20 md:space-y-28">
+              {categories.map((cat) => {
+                const catTours = tours.filter((t) => t.category === cat.key);
+                if (catTours.length === 0) return null;
+                return (
+                  <div key={cat.key}>
+                    <RevealOnScroll>
+                      <div className="flex items-baseline gap-5 mb-10 md:mb-12 pb-5 border-b border-[var(--color-ink-line)]/60">
+                        <div className="font-display text-3xl md:text-4xl font-medium text-[var(--color-ink)] tracking-[-0.02em]">
+                          {cat.label}
+                        </div>
+                        <div className="nums text-[11px] uppercase tracking-[0.22em] text-[var(--color-ink-subtle)]">
+                          {catTours.length.toString().padStart(2, "0")} Touren
+                        </div>
+                      </div>
+                    </RevealOnScroll>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                      {catTours.map((tour, i) => (
+                        <RevealOnScroll key={tour.slug} delay={i * 0.04}>
+                          <a
+                            href={whatsappLink(
+                              `Hallo, ich hätte Fragen zur Tour "${tour.title}". Könnt ihr mir mehr Infos schicken?`,
+                            )}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative block h-full p-6 md:p-7 rounded-[1.5rem] bg-[var(--color-paper)] ring-1 ring-[var(--color-ink)]/[0.06] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[2px] hover:ring-[var(--color-ember)]/30 hover:shadow-[0_30px_60px_-30px_rgba(24,52,84,0.25)] cursor-pointer"
+                          >
+                            {/* Title + Price row */}
+                            <div className="flex items-start justify-between gap-4 mb-2">
+                              <h3 className="font-display text-xl md:text-[22px] font-semibold text-[var(--color-ink)] leading-[1.15] tracking-[-0.015em] flex-1">
+                                {tour.title}
+                              </h3>
+                              <div className="flex-shrink-0 text-right">
+                                {tour.priceFrom !== undefined ? (
+                                  <div className="flex items-baseline gap-1 nums">
+                                    <span className="text-[10px] text-[var(--color-ink-subtle)] uppercase tracking-wider">
+                                      ab
+                                    </span>
+                                    <span className="font-display text-lg font-semibold text-[var(--color-ember)] leading-none">
+                                      €{tour.priceFrom}
+                                    </span>
+                                  </div>
+                                ) : (
+                                  <span className="text-[10px] font-medium text-[var(--color-ember)] uppercase tracking-wider leading-none">
+                                    auf Anfrage
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Duration */}
+                            <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-ink-subtle)] nums mb-5">
+                              {tour.duration}
+                            </div>
+
+                            {/* Highlights as bullet list */}
+                            <ul className="space-y-1.5">
+                              {tour.highlights.map((h) => (
+                                <li
+                                  key={h}
+                                  className="text-[13px] text-[var(--color-ink-muted)] leading-snug flex items-start gap-2"
+                                >
+                                  <span className="text-[var(--color-ember)] mt-1.5 flex-shrink-0">·</span>
+                                  <span>{h}</span>
+                                </li>
+                              ))}
+                            </ul>
+
+                            {/* Hover arrow */}
+                            <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-0 transition-opacity" aria-hidden="true" />
+                          </a>
+                        </RevealOnScroll>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
